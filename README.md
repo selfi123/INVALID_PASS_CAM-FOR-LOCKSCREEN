@@ -63,7 +63,7 @@ To create a scheduled task in Task Scheduler with the required settings:
     Actions Tab:
         Click New.
         Action: Select Start a program.
-        Program/script: Enter the path to the batch file (e.g., C:\Path\To\Your\Batch\run.bat).
+        Program/script: Enter the path to the batch file (e.g., C:\Path\To\Your\Batch\setup.bat).
         Add arguments (optional): Leave this blank.
         Click OK.
 
