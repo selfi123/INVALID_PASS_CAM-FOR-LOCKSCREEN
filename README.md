@@ -33,10 +33,47 @@ pip install pywin32 opencv-python
 
 
 ### HOW TO USE:
+Task Scheduler Setup
 
-RUN THE setup.bat file to set the settings according to the function of the executable to run on the startup before logging in.
+To create a scheduled task in Task Scheduler with the required settings:
 
-```````  setup.bat ```````
+    Open Task Scheduler:
+        Press Win + R, type taskschd.msc, and press Enter.
 
+    Create a New Task:
+        In the right pane, click Create Task.
 
-EXECUTABLE FILE IN THE executable folder , to set it as same as previous python file , use the bat file in the folder
+    General Tab:
+        Name: Enter a name for the task (e.g., "FailedLoginMonitor").
+        Description: (Optional) Enter a description.
+        Security Options:
+            Run with highest privileges: Check this box.
+            Run whether user is logged on or not: Check this box.
+            Configure for: Select your version of Windows.
+
+    Triggers Tab:
+        Click New.
+        Begin the task: Select On an event.
+        Settings:
+            Log: Select Security.
+            Source: Select Microsoft Windows security auditing.
+            Event ID: Enter 4625.
+        Click OK.
+
+    Actions Tab:
+        Click New.
+        Action: Select Start a program.
+        Program/script: Enter the path to the batch file (e.g., C:\Path\To\Your\Batch\run.bat).
+        Add arguments (optional): Leave this blank.
+        Click OK.
+
+    Conditions Tab:
+        Configure any conditions if needed (usually you can leave this as default).
+
+    Settings Tab:
+        Ensure Allow task to be run on demand is checked.
+        Check other settings as needed (e.g., If the task fails, restart every).
+
+    Save and Exit:
+        Click OK to save the task.
+        You may be prompted to enter your credentials. Enter the credentials for an account with sufficient permissions.
