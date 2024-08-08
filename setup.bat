@@ -1,6 +1,6 @@
 @echo off
 
-set "script_path=passcam.py"
+set "script_path=monitor_failed_logins.py"
 ::set the path for python.exe exeutable((find the location using ((where python)) in cmd))
 set "python_exe=C:\Python312\python.exe"
 
